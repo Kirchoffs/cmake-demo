@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.13)
+project(test_some_lib)
+add_executable(test_some_lib main.cpp)
+target_include_directories(test_some_lib PRIVATE /usr/local/include)
+target_link_directories(test_some_lib PRIVATE /usr/local/lib/ ${CMAKE_SOURCE_DIR}/../../some-lib-demo-alpha/cpp/build/)
+target_link_libraries(test_some_lib syh_math_alpha syh_math_beta)
