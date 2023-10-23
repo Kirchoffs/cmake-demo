@@ -50,3 +50,20 @@ __Case 1__
 ```
 >> cmake -S . -B build -D CMAKE_BUILD_TYPE=Release
 ```
+
+## Details
+### add_library & target_link_libraries
+- __add_library__ is used to define and build a library target in your CMake project. This can be a static library (.a on Linux, .lib on Windoes) or a shared library (.so on Linux, .dll on Windows).
+
+- It takes at least two arguments: the name of the library you want to create and a list of source files that should be compiled to build the library.
+
+- __target_link_libraries__ is used to specify the libraries that your executable or another library target depends on. It essentially links one or more libraries to a specific target (either an executable or another library).
+
+- It takes the target you want to link to as the first argument and the libraries you want to link with as the subsequent arguments.
+
+Example:
+```
+add_library(x_library x_source.cpp)
+add_executable(x_executable x_main.cpp)
+target_link_libraries(x_executable x_library)
+```
